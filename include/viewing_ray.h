@@ -17,10 +17,10 @@
 //     ray.origin + t*ray.direction should land exactly on the center of the
 //     pixel (i,j)
 void viewing_ray(
-  const Camera & camera,
-  const int i,
-  const int j,
-  const int width,
-  const int height,
-  Ray & ray);
+	const Camera& camera,
+	const int i,
+	const int j,
+	const int width,
+	const int height,
+	Ray& ray);
 #endif
