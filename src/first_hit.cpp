@@ -9,8 +9,19 @@ bool first_hit(
 	Eigen::Vector3d& n)
 {
 	////////////////////////////////////////////////////////////////////////////
-	// Replace with your code here:
-	return false;
+	bool finded = false;
+	for (int i = 0;i < objects.size();i++) {
+		double tmp_t;
+		Eigen::Vector3d tmp_n;
+		bool hitted = objects[i]->intersect(ray, min_t, tmp_t, tmp_n);
+		if (hitted && (!finded || tmp_t < t)) {
+			hit_id = i;
+			n = tmp_n;
+			t = tmp_t;
+			finded = true;
+		}
+	}
+	return finded;
 	////////////////////////////////////////////////////////////////////////////
 }
 
